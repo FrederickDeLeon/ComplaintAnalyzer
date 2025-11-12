@@ -4,7 +4,7 @@
 
 import requests # communication with web APIs
 import pandas as pd  # library for data manipulation and analysis
-
+import matplotlib.pyplot as plt  # creating graphs, charts, etc. for data visualization
 
 # Fetch data from NYC Open Data API
 url = "https://data.cityofnewyork.us/resource/erm2-nwe9.json?$limit=1000" # API endppoint of NYC 311 dataset, limited to 1000 records 
@@ -19,6 +19,15 @@ complaint_counts = df['complaint_type'].value_counts().head(10) # count how many
 print(complaint_counts) # output the top 10 complaint types with their counts
 
 
+# Visualization
+complaint_counts.head(10).plot(kind='bar', title='Top 10 Complaint Types')
+plt.xlabel('Complaint Type')
+plt.ylabel('Count')
+plt.tight_layout()
+plt.show()
+
+# Exporting Results
+complaint_counts.to_csv('top_complaints.csv')
 
 
 
