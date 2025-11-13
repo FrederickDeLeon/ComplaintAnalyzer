@@ -5,6 +5,7 @@
 import requests # communication with web APIs
 import pandas as pd  # library for data manipulation and analysis
 import matplotlib.pyplot as plt  # creating graphs, charts, etc. for data visualization
+import matplotlib.dates as mdates  # handling dates in matplotlib
 
 def main():
     
@@ -85,14 +86,25 @@ def pieChart(data, title):
     plt.show()
     
 def lineChart(data, title):
-    data.plot(kind='line', title=title)
-    plt.xlabel('Date')
-    plt.ylabel('Number of Complaints')
-    plt.grid(True)
+    data = data.copy()
+    data.index = pd.to_datetime(data.index)
+
+    fig, ax = plt.subplots()
+    ax.plot(data.index, data.values, marker='o', linestyle='-')
+    ax.set_title(title)
+    ax.set_xlabel('Date')
+    ax.set_ylabel('Number of Complaints')
+    ax.grid(True)
+
+    # show ticks at one-day intervals and format as YYYY-MM-DD
+    ax.xaxis.set_major_locator(mdates.DayLocator())
+    ax.xaxis.set_major_formatter(mdates.DateFormatter('%Y-%m-%d'))
+
+    plt.xticks(rotation=45)
     plt.tight_layout()
     plt.savefig(f"{title.replace(' ', '_').lower()}_line_chart.png")
     plt.show()
-
+    
 # Exporting Results
 def export(data, filename):
     data.to_csv(filename)
