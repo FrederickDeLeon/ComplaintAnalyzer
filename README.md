@@ -12,5 +12,5 @@ This is a Python-based program that fetches 311 complaint data from NYC's Open D
 ## WIP:
 * Expand on data analysis, such as including what boroughs these complaints come from
 * Visualization of the data, such as in a graph, bar chart, pie chart, etc. 
-* Options/Choices based on user input/Menu
+
 
