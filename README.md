@@ -8,9 +8,12 @@ This is a Python-based program that fetches 311 complaint data from NYC's Open D
 * Count the number of complaints for each complaint type
 * Output a list of the top 10 complaint types and the number of each complaint type in the data sampled
 * CSV exporting
+* Visualization of data in bar chart, pie chart, or line chart format
 
 ## WIP:
-* Expand on data analysis, such as including what boroughs these complaints come from
-* Visualization of the data, such as in a graph, bar chart, pie chart, etc. 
+* Expand on data analysis options
+* Improve UI
+* Allow the user to enter the max number of 311 records they wish to fetch from the database to analyze 
+
 
 
