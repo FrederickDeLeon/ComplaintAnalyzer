@@ -15,7 +15,8 @@ This is a Python-based program that fetches 311 complaint data from NYC's Open D
 ## WIP:
 * Expand on data analysis options
 * Improve UI
-* Allow the user to enter the maximum number of 311 records they wish to fetch from the database to analyze 
+* Allow the user to enter the maximum number of 311 records they wish to fetch from the database to analyze
+* Integrate a multi-agent agentic architecture to handle data fetching, cleaning, analysis, and visualization
 
 
 
